@@ -14,3 +14,16 @@ let sportok = [
 for (let s of sportok) {
     s.kiir();
 }
+document.addEventListener("DOMContentLoaded", () => {
+    var _a;
+    (_a = document.getElementById("fHozzaad")) === null || _a === void 0 ? void 0 : _a.addEventListener('click', () => {
+        let winner = document.getElementById('name');
+        let score = document.getElementById('score');
+        let foci = new football_1.Football(winner.value, score.value);
+        sportok.push(foci);
+        foci.kiir();
+        for (let s of sportok) {
+            s.kiir();
+        }
+    });
+});

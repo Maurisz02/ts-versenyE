@@ -19,3 +19,24 @@ let sportok : Results[] = [
 for (let s of sportok){
     s.kiir();
 }
+
+document.addEventListener("DOMContentLoaded",()=>{
+
+    document.getElementById("fHozzaad")?.addEventListener('click',()=>{
+
+        let winner = (document.getElementById('name') as HTMLInputElement);
+        let score = (document.getElementById('score') as HTMLInputElement);
+
+        let foci : Football = new Football(winner.value, score.value);
+
+        sportok.push(foci);
+
+        foci.kiir();
+
+        for (let s of sportok){
+            s.kiir();
+        }
+
+    });
+
+});
